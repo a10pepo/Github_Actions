@@ -99,8 +99,15 @@ jobs:
         path: code/terraform/tfplan.out   
 
     - name: test
-      run: ls -l code/terraform 
+      run: |
+        ls -l code/terraform 
+        cat code/terraform/tfplan.out
+        echo "Terraform plan file downloaded successfully."
 
+    # Verify the plan
+    - name: Verify Terraform plan
+      run: terraform show -json tfplan.out
+      working-directory: code/terraform
 
     # Apply Terraform changes
     - name: Terraform Apply
