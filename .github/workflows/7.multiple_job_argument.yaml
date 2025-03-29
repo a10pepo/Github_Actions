@@ -2,7 +2,12 @@ name: Second Action - Multiple Job Parallel
 
 on:
   workflow_dispatch:
-    
+    inputs:
+      debug_mode:
+        type: boolean
+        description: Debug mode,
+        default: false
+        required: false  
 
 jobs:
   hello-world:
@@ -17,4 +22,4 @@ jobs:
     - name: Fist Step
       run: echo "Hello World"
     - name: Second Step
-      run: echo "Bye World"           
+      run:  echo ${{ github.event.inputs.debug_mode }}          
