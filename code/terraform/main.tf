@@ -7,7 +7,7 @@ terraform {
 }
 
 resource "aws_s3_bucket" "example" {
-  bucket = "pnieto-terraform-example-bucket-${random_string.bucket_suffix.result}"
+  bucket = "pnieto-terraform-example-bucket"
   tags = {
     Name        = "example-bucket"
     Environment = "dev"
