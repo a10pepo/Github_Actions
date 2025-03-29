@@ -52,6 +52,7 @@ jobs:
     # Initialize Terraform
     - name: Terraform Init
       run: terraform init
+      working-directory: code/terraform
 
     # Run Terraform Plan
     - name: Terraform Plan
