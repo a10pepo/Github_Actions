@@ -63,13 +63,7 @@ jobs:
     # Check if there are changes
     - name: Terraform apply
       id: apply
-      run: |
-        terraform show -json tfplan | jq '.resource_changes | length' > changes.txt
-        if [ $(cat changes.txt) -eq 0 ]; then
-          echo "No terraform changes detected"
-        else
-          terraform apply -auto-approve tfplan
-        fi      
+      run: terraform apply -auto-approve tfplan     
       working-directory: code/terraform
 
 
