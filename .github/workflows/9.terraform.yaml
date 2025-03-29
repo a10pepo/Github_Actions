@@ -60,11 +60,12 @@ jobs:
       run: terraform plan -out=tfplan
       working-directory: code/terraform
 
-    # Check if there are changes
-    - name: Terraform apply
-      id: apply
-      run: terraform apply -auto-approve tfplan     
-      working-directory: code/terraform
+    # Upload tfplan as artifact
+    - name: Upload tfplan artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: tfplan
+        path: code/terraform/tfplan
 
   terraform-apply:
     name: Terraform Apply
@@ -89,6 +90,14 @@ jobs:
       uses: hashicorp/setup-terraform@v2
       with:
         terraform_version: 1.5.0
+
+    # Download tfplan artifact
+    - name: Download tfplan artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: tfplan
+        path: code/terraform/tfplan        
+
 
     # Apply Terraform changes
     - name: Terraform Apply
