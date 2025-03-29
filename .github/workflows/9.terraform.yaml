@@ -95,7 +95,7 @@ jobs:
     - name: Download tfplan artifact
       uses: actions/download-artifact@v4
       with:
-        name: tfplan.out
+        name: tfplan
         path: code/terraform
 
     - name: test
