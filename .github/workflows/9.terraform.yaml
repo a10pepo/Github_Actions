@@ -57,7 +57,7 @@ jobs:
     # Run Terraform Plan
     - name: Terraform Plan
       id: plan
-      run: terraform plan -out=tfplan
+      run: terraform plan -out=tfplan.out
       working-directory: code/terraform
 
     # Upload tfplan as artifact
@@ -65,7 +65,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: tfplan
-        path: code/terraform/tfplan
+        path: code/terraform/tfplan.out
 
   terraform-apply:
     name: Terraform Apply
@@ -96,7 +96,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: tfplan
-        path: code/terraform/tfplan        
+        path: code/terraform/tfplan.out   
 
 
     # Apply Terraform changes
