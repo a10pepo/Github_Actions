@@ -98,6 +98,9 @@ jobs:
         name: tfplan
         path: code/terraform/tfplan.out   
 
+    - name: test
+      run: ls -l code/terraform 
+
 
     # Apply Terraform changes
     - name: Terraform Apply
