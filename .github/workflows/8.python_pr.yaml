@@ -29,3 +29,13 @@ jobs:
     # Run tests
     - name: Run tests
       run: python -m unittest discover -s code/python -p "test_*.py"
+
+    - name: Run linters
+      run: |
+        if [ -f code/python/requirements.txt ]; then pip install flake8; fi
+        flake8 code/python
+    
+    - name: Run security checks
+      run: |
+        if [ -f code/python/requirements.txt ]; then pip install bandit; fi
+        bandit -r code/python
