@@ -1,0 +1,20 @@
+name: Second Action - Multiple Job
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Fist Step
+      run: echo "Hello World"
+  bye-world:
+    runs-on: ubuntu-latest
+    dependencies: hello-world
+    steps:
+    - name: Fist Step
+      run: echo "Hello World"
+    - name: Second Step
+      run: echo "Bye World"           
