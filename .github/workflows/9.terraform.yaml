@@ -104,6 +104,11 @@ jobs:
         cat code/terraform/tfplan.out
         echo "Terraform plan file downloaded successfully."
 
+    # Initialize Terraform
+    - name: Terraform Init
+      run: terraform init
+      working-directory: code/terraform
+
     # Verify the plan
     - name: Verify Terraform plan
       run: terraform show -json tfplan.out
