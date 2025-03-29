@@ -101,6 +101,6 @@ jobs:
 
     # Apply Terraform changes
     - name: Terraform Apply
-      run: terraform apply -auto-approve code/terraform/tfplan
+      run: terraform apply -auto-approve code/terraform/tfplan.out
       working-directory: code/terraform
 
