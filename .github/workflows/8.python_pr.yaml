@@ -3,6 +3,7 @@ name: Python Tests on PR
 on:
   pull_request:
     types: [synchronize, opened, reopened]
+  workflow_dispatch:
 
 jobs:
   test:
