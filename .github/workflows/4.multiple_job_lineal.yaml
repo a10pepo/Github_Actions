@@ -1,4 +1,4 @@
-name: Second Action - Multiple Job
+name: Second Action - Multiple Job Lineal
 
 on:
   workflow_dispatch:
