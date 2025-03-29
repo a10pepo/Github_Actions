@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     bucket = "pnieto-ghaction-terraform-state"
     key    = "terraform/state"
-    region = "eu-west-1"  # Change to your desired AWS region
+    region = "eu-west-1" # Change to your desired AWS region
   }
 }
 
