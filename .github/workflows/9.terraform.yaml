@@ -61,7 +61,7 @@ jobs:
 
     # Check if there are changes
     - name: Terraform apply
-      id: tf apply
+      id: apply
       run: |
         terraform show -json tfplan | jq '.resource_changes | length' > changes.txt
         if [ $(cat changes.txt) -eq 0 ]; then
