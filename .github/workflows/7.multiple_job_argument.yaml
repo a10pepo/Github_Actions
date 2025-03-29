@@ -5,9 +5,14 @@ on:
     inputs:
       debug_mode:
         type: boolean
-        description: Debug mode,
+        description: Debug
         default: false
-        required: false  
+        required: false
+      sample_value:
+        type: string
+        description: Cualquier valor
+        default: ""
+        required: false          
 
 jobs:
   hello-world:
