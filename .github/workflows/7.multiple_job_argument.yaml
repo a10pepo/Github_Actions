@@ -1,4 +1,4 @@
-name: Second Action - Multiple Job Parallel
+name: Second Action - Multiple Job Parallel Parameterized
 
 on:
   workflow_dispatch:
