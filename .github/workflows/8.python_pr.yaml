@@ -4,6 +4,10 @@ on:
   pull_request:
     types: [synchronize, opened, reopened]
   workflow_dispatch:
+  push:
+    branches:
+      - main
+
 
 jobs:
   test:
@@ -24,7 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f code/python/requirements.txt ]; then pip install -r code/python/requirements.txt; fi
+        pip install -r code/python/requirements.txt
 
     # Run tests
     - name: Run tests
@@ -32,10 +36,8 @@ jobs:
 
     - name: Run linters
       run: |
-        if [ -f code/python/requirements.txt ]; then pip install flake8; fi
         flake8 code/python
     
     - name: Run security checks
       run: |
-        if [ -f code/python/requirements.txt ]; then pip install bandit; fi
         bandit -r code/python
