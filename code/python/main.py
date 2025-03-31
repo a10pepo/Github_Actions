@@ -19,6 +19,8 @@ def calculator():
     print("2. Subtract")
     print("3. Multiply")
     print("4. Divide")
+    print("5. Exit")
+    print("Please enter the number of the operation you want to perform.")
 
     try:
         choice = int(input("Enter the number of the operation (1/2/3/4): "))
@@ -37,6 +39,9 @@ def calculator():
             print(f"The result is: {multiply(num1, num2)}")
         elif choice == 4:
             print(f"The result is: {divide(num1, num2)}")
+        elif choice == 5:
+            print("Exiting the calculator. Goodbye!")
+            return
     except ValueError:
         print("Invalid input. Please enter numeric values.")
 
