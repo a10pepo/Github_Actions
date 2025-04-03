@@ -11,3 +11,5 @@ jobs:
     steps:
     - name: Fist Step
       run: echo "Hello World"
+    - name: Second Step
+      run: echo "Bye World"
