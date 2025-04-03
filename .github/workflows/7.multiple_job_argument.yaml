@@ -26,5 +26,9 @@ jobs:
     steps:
     - name: Fist Step
       run: echo "Hello World"
+    {{ if github.event.inputs.debug_mode == 'true' }}
+    - name: Second Step
+      run: echo "Bye World"
+    {{ else }}
     - name: Second Step
       run:  echo ${{ github.event.inputs.debug_mode }}          
