@@ -1,6 +1,7 @@
 import unittest
 from main import add, subtract, multiply, divide
 
+
 class TestCalculatorFunctions(unittest.TestCase):
 
     def test_add(self):
@@ -22,7 +23,9 @@ class TestCalculatorFunctions(unittest.TestCase):
         self.assertEqual(divide(10, 2), 5)
         self.assertEqual(divide(3, 3), 1)
         self.assertEqual(divide(0, 1), 0)
-        self.assertEqual(divide(5, 0), "Error: Division by zero is not allowed.")
+        self.assertEqual(divide(5, 0),
+                         "Error: Division by zero is not allowed.")
+
 
 if __name__ == "__main__":
     unittest.main()
