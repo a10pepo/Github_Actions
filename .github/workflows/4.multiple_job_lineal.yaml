@@ -19,4 +19,4 @@ jobs:
     - name: Second Step
       run: echo "Bye World"
     - name: Third Step
-      run: lakñdjfalñskdjf
+      run: echo "Bye World"
