@@ -15,6 +15,11 @@ def divide(a, b):
         return "Error: Division by zero is not allowed."
     return a / b
 
+def square_root(a):
+    if a < 0:
+        return "Error: Cannot calculate square root of a negative number."
+    return a ** 0.5
+
 
 def calculator():
     print("Welcome to the Python Calculator!")
@@ -23,7 +28,8 @@ def calculator():
     print("2. Subtract")
     print("3. Multiply")
     print("4. Divide")
-    print("5. Exit")
+    print("5. Square Root")
+    print("6. Exit")
     print("Please enter the number of the operation you want to perform.")
 
     try:
