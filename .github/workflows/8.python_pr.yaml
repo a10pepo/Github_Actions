@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - '*'
 
 
 jobs:
@@ -41,3 +41,8 @@ jobs:
     - name: Run security checks
       run: |
         bandit -r code/python
+
+    - name: Lint Dockerfile
+      uses: hadolint/hadolint-action@v3.1.0
+      with:
+        dockerfile: code/python/Dockerfile
