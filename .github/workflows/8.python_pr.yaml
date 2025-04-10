@@ -45,4 +45,4 @@ jobs:
     - name: Lint Dockerfile
       uses: hadolint/hadolint-action@v3.1.0
       with:
-        dockerfile: code/python/Dockerfile
+        dockerfile: code/python/DockerFile
