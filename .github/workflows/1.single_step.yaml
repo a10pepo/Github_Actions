@@ -12,4 +12,11 @@ jobs:
       run: echo "Hello World"
     - name: Second Step
       run: echo "Hello World Again"
-      
+  bye-world:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Fist Step
+      run: echo "Bye World"
+    - name: Second Step
+      run: echo "Bye World Again"
