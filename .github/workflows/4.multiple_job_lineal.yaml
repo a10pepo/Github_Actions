@@ -2,6 +2,17 @@ name: Second Action - Multiple Job Lineal
 
 on:
   workflow_dispatch:
+    inputs:
+      debug_mode:
+        type: boolean
+        description: Debug
+        default: false
+        required: false
+      sample_value:
+        type: string
+        description: Cualquier valor
+        default: ""
+        required: false    
 
 jobs:
   hello-world:
