@@ -10,7 +10,7 @@ on:
 
 
 jobs:
-  test:
+  linting:
     runs-on: ubuntu-latest
 
     steps:
@@ -46,3 +46,20 @@ jobs:
       uses: hadolint/hadolint-action@v3.1.0
       with:
         dockerfile: code/python/DockerFile
+  docker:
+    runs-on: ubuntu-latest
+    needs: linting
+    steps:
+    # Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Set up Docker Buildx
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build and push
+      uses: docker/build-push-action@v6
+      with:
+        push: true
+        tags: user/app:latest
