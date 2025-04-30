@@ -27,8 +27,8 @@ def calculator():
     print("Please enter the number of the operation you want to perform.")
 
     try:
-        choice = int(input("Enter the number of the operation (1/2/3/4): "))
-        if choice not in [1, 2, 3, 4]:
+        choice = int(input("Enter the number of the operation (1/2/3/4/5): "))
+        if choice not in [1, 2, 3, 4, 5]:
             print("Invalid choice. Please select a valid operation.")
             return
 
